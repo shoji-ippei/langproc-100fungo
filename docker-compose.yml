@@ -1,0 +1,20 @@
+version: "3.7"
+volumes:
+  jupyterlab_sync_volume:
+    external: true
+services:
+  jupyterlab:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    user: root
+    container_name: jupyterlab
+    environment:
+      GRANT_SUDO: "yes"
+      JUPYTER_ENABLE_LAB: "yes"
+    privileged: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - jupyterlab_sync_volume:/home/jovyan/work/langproc-100fungo
+    command: start.sh jupyter lab --NotebookApp.token=''

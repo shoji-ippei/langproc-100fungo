@@ -1,0 +1,10 @@
+version: "2"
+syncs:
+  jupyterlab_sync_volume:
+    src: './'
+    sync_strategy: 'unison'
+    sync_excludes: ['tmp/']
+    watch_args: '-v'
+    sync_args:
+      - "-ignore='Path tmp'"
+      - "-ignore='BelowPath tmp'"
