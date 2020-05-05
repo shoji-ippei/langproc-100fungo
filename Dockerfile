@@ -4,7 +4,7 @@ FROM jupyter/datascience-notebook:latest
 USER root
 
 # 日本語フォント
-RUN apt-get update
+RUN apt-get update && apt-get install -y fonts-noto-cjk
 #RUN apt-get install -y ttf-kochi-gothic xfonts-intl-japanese xfonts-intl-japanese-big xfonts-kaname
 
 # install mecab
