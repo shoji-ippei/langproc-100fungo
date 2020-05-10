@@ -14,3 +14,5 @@ python-dateutil==2.8.1
 pytz==2019.3
 six==1.14.0
 mecab-python3==0.996.5
+pydot3==1.0.9
+pydot-ng==2.0.0
